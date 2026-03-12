@@ -35,6 +35,63 @@ export function CreationWizardPage() {
     useWizardStore();
   const loadSheet = useInvestigatorStore((state) => state.loadSheet);
 
+  const hasValueInRange = (value?: number, min = 15, max = 99) =>
+    typeof value === "number" && Number.isFinite(value) && value >= min && value <= max;
+
+  const isStepRawComplete = (stepNumber: number) => {
+    switch (stepNumber) {
+      case 1:
+        return Boolean(data.name?.trim() && data.occupation?.trim());
+      case 2:
+        return (
+          hasValueInRange(data.STR?.value) &&
+          hasValueInRange(data.CON?.value) &&
+          hasValueInRange(data.SIZ?.value) &&
+          hasValueInRange(data.DEX?.value) &&
+          hasValueInRange(data.APP?.value) &&
+          hasValueInRange(data.INT?.value) &&
+          hasValueInRange(data.POW?.value) &&
+          hasValueInRange(data.EDU?.value) &&
+          hasValueInRange(data.luck)
+        );
+      case 3:
+        return hasValueInRange(data.age, 15, 90);
+      case 4:
+        return (
+          typeof data.occupationPointsTotal === "number" &&
+          Number.isFinite(data.occupationPointsTotal) &&
+          typeof data.personalPointsTotal === "number" &&
+          Number.isFinite(data.personalPointsTotal)
+        );
+      case 5:
+        return (
+          !!data.skills &&
+          typeof data.occupationPointsSpent === "number" &&
+          typeof data.personalPointsSpent === "number" &&
+          typeof data.occupationPointsTotal === "number" &&
+          typeof data.personalPointsTotal === "number" &&
+          data.occupationPointsSpent <= data.occupationPointsTotal &&
+          data.personalPointsSpent <= data.personalPointsTotal
+        );
+      case 6:
+        return true;
+      case 7:
+        return true;
+      default:
+        return false;
+    }
+  };
+
+  const completedSteps: boolean[] = [];
+  for (let index = 0; index < STEPS.length; index += 1) {
+    const stepNumber = index + 1;
+    const previousComplete = index === 0 ? true : completedSteps[index - 1];
+    completedSteps[index] = previousComplete && isStepRawComplete(stepNumber);
+  }
+
+  const firstIncompleteIndex = completedSteps.findIndex((isComplete) => !isComplete);
+  const lastIncompleteStep = firstIncompleteIndex === -1 ? STEPS.length : firstIncompleteIndex + 1;
+
   const handleFinish = async () => {
     const sheet = createInvestigator(data);
     loadSheet(sheet);
@@ -75,8 +132,9 @@ export function CreationWizardPage() {
               {(() => {
                 const stepNumber = index + 1;
                 const isCurrent = currentStep === stepNumber;
-                const isReachable = stepNumber < currentStep;
-                const isClickable = stepNumber <= currentStep;
+                const isCompleted = completedSteps[index];
+                const isLastIncomplete = stepNumber === lastIncompleteStep;
+                const isClickable = isCompleted || isLastIncomplete;
 
                 if (!isClickable) {
                   return (
@@ -100,9 +158,7 @@ export function CreationWizardPage() {
                         : "px-2 py-1 opacity-80 cursor-pointer border-2 border-transparent hover:border-[var(--color-weird-black-alpha-20)] hover:bg-[var(--color-weird-black-alpha-10)] focus-visible:outline-none focus-visible:border-[var(--color-weird-black-alpha-30)] focus-visible:bg-[var(--color-weird-black-alpha-10)]"
                     }
                     title={
-                      isReachable
-                        ? t("back")
-                        : undefined
+                      isCompleted ? t("back") : undefined
                     }
                   >
                     {stepNumber}. {t(step)}
