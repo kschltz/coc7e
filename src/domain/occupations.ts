@@ -3,6 +3,7 @@ export interface OccupationDefinition {
   pointFormula: string; // e.g. "EDU*4", "EDU*2+DEX*2"
   skills: string[]; // keys of skills
   creditRating: [number, number]; // min, max
+  skillRatios?: Record<string, number>; // optional skill allocation ratios (0-100)
 }
 
 export const OCCUPATIONS: OccupationDefinition[] = [
@@ -20,6 +21,16 @@ export const OCCUPATIONS: OccupationDefinition[] = [
       "navigate",
     ],
     creditRating: [30, 70],
+    skillRatios: {
+      appraise: 20,
+      art_craft: 10,
+      history: 20,
+      library_use: 15,
+      language_other: 10,
+      spot_hidden: 10,
+      charm: 5,
+      navigate: 10,
+    },
   },
   {
     key: "artist",
@@ -35,6 +46,16 @@ export const OCCUPATIONS: OccupationDefinition[] = [
       "listen",
     ],
     creditRating: [9, 50],
+    skillRatios: {
+      art_craft: 25,
+      history: 10,
+      natural_world: 15,
+      psychology: 10,
+      language_other: 10,
+      spot_hidden: 10,
+      charm: 10,
+      listen: 10,
+    },
   },
   {
     key: "author",
@@ -50,6 +71,16 @@ export const OCCUPATIONS: OccupationDefinition[] = [
       "persuade",
     ],
     creditRating: [9, 30],
+    skillRatios: {
+      art_craft: 5,
+      history: 15,
+      library_use: 20,
+      natural_world: 10,
+      occult: 10,
+      language_other: 15,
+      psychology: 15,
+      persuade: 10,
+    },
   },
   {
     key: "doctor_of_medicine",
@@ -60,11 +91,19 @@ export const OCCUPATIONS: OccupationDefinition[] = [
       "medicine",
       "psychology",
       "science",
-      "science",
       "charm",
       "library_use",
     ],
     creditRating: [30, 80],
+    skillRatios: {
+      first_aid: 15,
+      language_other: 10,
+      medicine: 30,
+      psychology: 10,
+      science: 20,
+      charm: 5,
+      library_use: 10,
+    },
   },
   {
     key: "journalist",
@@ -80,6 +119,16 @@ export const OCCUPATIONS: OccupationDefinition[] = [
       "spot_hidden",
     ],
     creditRating: [9, 30],
+    skillRatios: {
+      art_craft: 5,
+      history: 15,
+      library_use: 15,
+      language_own: 15,
+      psychology: 15,
+      charm: 10,
+      fast_talk: 15,
+      spot_hidden: 10,
+    },
   },
   {
     key: "police_detective",
@@ -95,6 +144,16 @@ export const OCCUPATIONS: OccupationDefinition[] = [
       "charm",
     ],
     creditRating: [20, 50],
+    skillRatios: {
+      art_craft: 5,
+      disguise: 10,
+      firearms_handgun: 10,
+      law: 15,
+      listen: 15,
+      psychology: 20,
+      spot_hidden: 15,
+      charm: 10,
+    },
   },
   {
     key: "private_investigator",
@@ -110,6 +169,16 @@ export const OCCUPATIONS: OccupationDefinition[] = [
       "charm",
     ],
     creditRating: [9, 30],
+    skillRatios: {
+      art_craft: 5,
+      disguise: 15,
+      law: 10,
+      library_use: 15,
+      listen: 15,
+      psychology: 20,
+      spot_hidden: 15,
+      charm: 5,
+    },
   },
   {
     key: "professor",
@@ -120,10 +189,18 @@ export const OCCUPATIONS: OccupationDefinition[] = [
       "language_own",
       "psychology",
       "science",
-      "science",
       "charm",
       "history",
     ],
     creditRating: [20, 70],
+    skillRatios: {
+      library_use: 15,
+      language_other: 15,
+      language_own: 10,
+      psychology: 10,
+      science: 25,
+      charm: 5,
+      history: 20,
+    },
   },
 ];
