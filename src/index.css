@@ -68,3 +68,60 @@ body::before {
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: var(--color-weird-red);
 }
+
+@keyframes dicePulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(242, 201, 76, 0);
+  }
+  50% {
+    transform: scale(1.01);
+    box-shadow: 0 0 24px rgba(242, 201, 76, 0.35);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(242, 201, 76, 0);
+  }
+}
+
+@keyframes diceAlertShake {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-2px);
+  }
+  40% {
+    transform: translateX(2px);
+  }
+  60% {
+    transform: translateX(-2px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.dice-outcome-critical {
+  background: linear-gradient(130deg, #f2c94c 0%, #f5de8e 100%);
+  color: var(--color-weird-black);
+  animation: dicePulse 0.55s ease;
+}
+
+.dice-outcome-extreme,
+.dice-outcome-hard,
+.dice-outcome-regular {
+  background: linear-gradient(130deg, rgba(242, 201, 76, 0.55) 0%, rgba(242, 201, 76, 0.24) 100%);
+  color: var(--color-weird-black);
+  animation: dicePulse 0.45s ease;
+}
+
+.dice-outcome-failure,
+.dice-outcome-fumble {
+  background: linear-gradient(130deg, rgba(217, 37, 37, 0.34) 0%, rgba(139, 26, 26, 0.48) 100%);
+  color: var(--color-weird-black);
+  animation: diceAlertShake 0.4s ease;
+}

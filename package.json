@@ -13,6 +13,7 @@
     "test:e2e:headed": "playwright test --headed"
   },
   "dependencies": {
+    "@3d-dice/dice-box": "^1.1.4",
     "@fontsource/cinzel-decorative": "^5.2.8",
     "@fontsource/courier-prime": "^5.2.8",
     "@fontsource/im-fell-english": "^5.2.6",
