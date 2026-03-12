@@ -31,7 +31,8 @@ const STEPS = [
 export function CreationWizardPage() {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { currentStep, nextStep, prevStep, data, isValid } = useWizardStore();
+  const { currentStep, nextStep, prevStep, setStep, data, isValid } =
+    useWizardStore();
   const loadSheet = useInvestigatorStore((state) => state.loadSheet);
 
   const handleFinish = async () => {
@@ -71,15 +72,43 @@ export function CreationWizardPage() {
         <div className="flex flex-wrap justify-center gap-2 text-sm font-serif uppercase tracking-widest text-[var(--color-weird-black)]">
           {STEPS.map((step, index) => (
             <div key={step} className="flex items-center">
-              <span
-                className={
-                  currentStep === index + 1
-                    ? "text-[var(--color-weird-red)] font-bold bg-[var(--color-weird-yellow)] px-2 py-1 border-2 border-[var(--color-weird-black)] shadow-[2px_2px_0px_var(--color-weird-black)]"
-                    : "opacity-50"
+              {(() => {
+                const stepNumber = index + 1;
+                const isCurrent = currentStep === stepNumber;
+                const isReachable = stepNumber < currentStep;
+                const isClickable = stepNumber <= currentStep;
+
+                if (!isClickable) {
+                  return (
+                    <span
+                      className="opacity-50 cursor-default"
+                      aria-disabled="true"
+                    >
+                      {stepNumber}. {t(step)}
+                    </span>
+                  );
                 }
-              >
-                {index + 1}. {t(step)}
-              </span>
+
+                return (
+                  <button
+                    type="button"
+                    onClick={() => setStep(stepNumber)}
+                    aria-current={isCurrent ? "step" : undefined}
+                    className={
+                      isCurrent
+                        ? "text-[var(--color-weird-red)] font-bold bg-[var(--color-weird-yellow)] px-2 py-1 border-2 border-[var(--color-weird-black)] shadow-[2px_2px_0px_var(--color-weird-black)]"
+                        : "px-2 py-1 opacity-80 cursor-pointer border-2 border-transparent hover:border-[var(--color-weird-black-alpha-20)] hover:bg-[var(--color-weird-black-alpha-10)] focus-visible:outline-none focus-visible:border-[var(--color-weird-black-alpha-30)] focus-visible:bg-[var(--color-weird-black-alpha-10)]"
+                    }
+                    title={
+                      isReachable
+                        ? t("back")
+                        : undefined
+                    }
+                  >
+                    {stepNumber}. {t(step)}
+                  </button>
+                );
+              })()}
               {index < STEPS.length - 1 && (
                 <span className="mx-2 opacity-30">/</span>
               )}
