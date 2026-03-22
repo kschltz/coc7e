@@ -9,8 +9,8 @@ const PulpInput = React.forwardRef<HTMLInputElement, InputProps>(
       <input
         type={type}
         className={cn(
-          "flex h-8 w-full bg-[var(--color-weird-paper)] border-2 border-[var(--color-weird-black)] shadow-[2px_2px_0px_var(--color-weird-black)] px-2 py-1 text-sm placeholder:text-[var(--color-weird-black)]/50 focus-visible:outline-none focus-visible:border-[var(--color-weird-red)] disabled:cursor-not-allowed disabled:opacity-50",
-          "font-serif text-[var(--color-weird-black)] font-bold",
+          "flex h-8 w-full bg-[var(--color-weird-paper)] border-2 border-[var(--color-weird-black)] px-2 py-1 text-sm placeholder:text-[var(--color-weird-black)]/50 focus-visible:outline-none focus-visible:border-[var(--color-weird-red)] disabled:cursor-not-allowed disabled:opacity-50",
+          "font-sans text-[var(--color-weird-black)] font-bold",
           className,
         )}
         ref={ref}

@@ -52,7 +52,7 @@ export function Step1Concept() {
 
   return (
     <div className="space-y-6">
-      <h3 className="font-['IM_Fell_English'] text-3xl text-[var(--color-weird-red)] italic border-b-[3px] border-[var(--color-weird-black)] pb-2 font-bold">
+      <h3 className="font-serif text-3xl text-[var(--color-weird-paper)] italic border-b-[3px] border-[var(--color-weird-black)] pb-2 font-bold">
         {t("step_concept")}
       </h3>
 

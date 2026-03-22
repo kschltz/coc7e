@@ -8,6 +8,7 @@ import { PulpButton } from "../components/ui/PulpButton";
 import { PulpDivider } from "../components/ui/PulpDivider";
 import { createInvestigator } from "../application";
 import { saveSheet } from "../adapters/fileAdapter";
+import { OccultEye, TentacleCorner } from "../components/illustrations";
 
 // Wizard Steps
 import { Step1Concept } from "../components/wizard/Step1Concept";
@@ -123,10 +124,10 @@ export function CreationWizardPage() {
   return (
     <div className="max-w-4xl mx-auto py-4">
       <div className="flex flex-col items-center mb-6">
-        <h2 className="font-['Cinzel_Decorative'] text-4xl text-[var(--color-weird-red)] font-bold tracking-tighter drop-shadow-sm mb-6">
+        <h2 className="font-serif text-4xl text-[var(--color-weird-black)] font-extrabold italic tracking-tight mb-6 uppercase">
           {t("new_sheet")}
         </h2>
-        <div className="flex flex-wrap justify-center gap-2 text-sm font-serif uppercase tracking-widest text-[var(--color-weird-black)]">
+        <div className="flex flex-wrap justify-center gap-1 text-sm font-serif uppercase tracking-widest text-[var(--color-weird-black)]">
           {STEPS.map((step, index) => (
             <div key={step} className="flex items-center">
               {(() => {
@@ -139,7 +140,7 @@ export function CreationWizardPage() {
                 if (!isClickable) {
                   return (
                     <span
-                      className="opacity-50 cursor-default"
+                      className="opacity-40 cursor-default px-2 py-1"
                       aria-disabled="true"
                     >
                       {stepNumber}. {t(step)}
@@ -154,8 +155,8 @@ export function CreationWizardPage() {
                     aria-current={isCurrent ? "step" : undefined}
                     className={
                       isCurrent
-                        ? "text-[var(--color-weird-red)] font-bold bg-[var(--color-weird-yellow)] px-2 py-1 border-2 border-[var(--color-weird-black)] shadow-[2px_2px_0px_var(--color-weird-black)]"
-                        : "px-2 py-1 opacity-80 cursor-pointer border-2 border-transparent hover:border-[var(--color-weird-black-alpha-20)] hover:bg-[var(--color-weird-black-alpha-10)] focus-visible:outline-none focus-visible:border-[var(--color-weird-black-alpha-30)] focus-visible:bg-[var(--color-weird-black-alpha-10)]"
+                        ? "text-[var(--color-weird-paper)] font-bold bg-[var(--color-weird-red)] px-2 py-1 border-2 border-[var(--color-weird-black)]"
+                        : "px-2 py-1 cursor-pointer border-2 border-transparent hover:border-[var(--color-weird-black)] hover:bg-[var(--color-weird-black-alpha-10)] focus-visible:outline-none focus-visible:border-[var(--color-weird-black)]"
                     }
                     title={
                       isCompleted ? t("back") : undefined
@@ -166,19 +167,26 @@ export function CreationWizardPage() {
                 );
               })()}
               {index < STEPS.length - 1 && (
-                <span className="mx-2 opacity-30">/</span>
+                <span className="mx-1 opacity-30">/</span>
               )}
             </div>
           ))}
         </div>
       </div>
 
-      <div className="bg-[var(--color-weird-paper)] p-8 border-[4px] border-[var(--color-weird-black)] shadow-[8px_8px_0px_var(--color-weird-black)] relative">
-        <div className="absolute top-0 left-0 w-full h-2 bg-[var(--color-weird-red)] border-b-[3px] border-[var(--color-weird-black)]"></div>
-        {renderStep()}
+      <div className="relative bg-[var(--color-weird-teal)] p-8 border-[4px] border-[var(--color-weird-paper)] outline-[4px] outline-[var(--color-weird-black)] overflow-hidden">
+        {/* Decorative tentacle corners */}
+        <TentacleCorner className="absolute bottom-0 left-0 w-16 h-16 text-[var(--color-weird-black)] opacity-10 pointer-events-none rotate-90" />
+        <TentacleCorner className="absolute bottom-0 right-0 w-16 h-16 text-[var(--color-weird-black)] opacity-10 pointer-events-none -rotate-90 -scale-x-100" />
+
+        <div className="relative z-10">
+          {renderStep()}
+        </div>
       </div>
 
-      <PulpDivider className="my-8" />
+      <div className="flex justify-center my-6">
+        <OccultEye className="w-16 h-10 text-[var(--color-weird-black)] opacity-15" />
+      </div>
 
       <div className="flex justify-between items-center">
         <PulpButton

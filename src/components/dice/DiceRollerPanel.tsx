@@ -237,9 +237,9 @@ export function DiceRollerPanel({ sheet }: DiceRollerPanelProps) {
 
   return (
     <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
-      <section className="border-[3px] border-[var(--color-weird-black)] p-4 bg-[var(--color-weird-paper)] shadow-[6px_6px_0px_var(--color-weird-black)] relative">
+      <section className="border-[3px] border-[var(--color-weird-black)] p-4 bg-[var(--color-weird-paper)] relative">
         <div className="absolute top-0 left-0 w-full h-2 bg-[var(--color-weird-red)] border-b-[3px] border-[var(--color-weird-black)]"></div>
-        <h2 className="font-['IM_Fell_English'] text-2xl text-[var(--color-weird-red)] italic mb-4 border-b-[3px] border-[var(--color-weird-black)] pb-1 font-bold mt-1">
+        <h2 className="font-serif text-2xl text-[var(--color-weird-red)] italic mb-4 border-b-[3px] border-[var(--color-weird-black)] pb-1 font-bold mt-1">
           {t("dice_roll_setup")}
         </h2>
 
@@ -277,7 +277,7 @@ export function DiceRollerPanel({ sheet }: DiceRollerPanelProps) {
           </div>
 
           <div className="border-2 border-[var(--color-weird-black)] bg-[var(--color-weird-black)] text-[var(--color-weird-paper)] px-3 py-2">
-            <p className="font-['IM_Fell_English'] italic text-lg text-[var(--color-weird-yellow)] font-bold">
+            <p className="font-serif italic text-lg text-[var(--color-weird-yellow)] font-bold">
               {selectedTarget?.label ?? t("dice_no_target")}
             </p>
             <div className="mt-2 grid grid-cols-3 gap-2 text-center">
@@ -320,9 +320,9 @@ export function DiceRollerPanel({ sheet }: DiceRollerPanelProps) {
         </div>
       </section>
 
-      <section className="border-[3px] border-[var(--color-weird-black)] p-4 bg-[var(--color-weird-paper)] shadow-[6px_6px_0px_var(--color-weird-black)] relative overflow-hidden">
+      <section className="border-[3px] border-[var(--color-weird-black)] p-4 bg-[var(--color-weird-paper)] relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-2 bg-[var(--color-weird-red)] border-b-[3px] border-[var(--color-weird-black)]"></div>
-        <h2 className="font-['IM_Fell_English'] text-2xl text-[var(--color-weird-red)] italic mb-4 border-b-[3px] border-[var(--color-weird-black)] pb-1 font-bold mt-1">
+        <h2 className="font-serif text-2xl text-[var(--color-weird-red)] italic mb-4 border-b-[3px] border-[var(--color-weird-black)] pb-1 font-bold mt-1">
           {t("dice_visual_roll")}
         </h2>
 
@@ -332,7 +332,7 @@ export function DiceRollerPanel({ sheet }: DiceRollerPanelProps) {
         >
           {!isReady && (
             <div className="absolute inset-0 flex items-center justify-center text-center p-4 bg-[rgba(17,17,17,0.65)]">
-              <p className="font-['IM_Fell_English'] italic text-[var(--color-weird-paper)] text-xl font-bold">
+              <p className="font-serif italic text-[var(--color-weird-paper)] text-xl font-bold">
                 {t("dice_engine_loading")}
               </p>
             </div>
@@ -357,7 +357,7 @@ export function DiceRollerPanel({ sheet }: DiceRollerPanelProps) {
                 <p className="text-xs uppercase tracking-widest font-bold">
                   {outcome.success ? t("dice_result_success") : t("dice_result_failure")}
                 </p>
-                <p className="font-['IM_Fell_English'] text-xl italic font-bold">
+                <p className="font-serif text-xl italic font-bold">
                   {t(`dice_outcome_${outcome.tier}`)}
                 </p>
                 <p className="font-['Courier_Prime'] text-base font-bold">

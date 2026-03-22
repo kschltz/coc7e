@@ -12,7 +12,7 @@ const PulpCheckbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
     return (
       <div
         className={cn(
-          "relative flex items-center justify-center w-5 h-5 border-2 border-[var(--color-weird-black)] bg-[var(--color-weird-paper)] cursor-pointer shadow-[2px_2px_0px_var(--color-weird-black)]",
+          "relative flex items-center justify-center w-5 h-5 border-2 border-[var(--color-weird-black)] bg-[var(--color-weird-paper)] cursor-pointer",
           className,
         )}
       >

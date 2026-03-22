@@ -1,6 +1,7 @@
 import { ReactNode, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useInvestigatorStore } from "../../store/investigatorStore";
+import { TentacleDivider } from "../illustrations";
 
 export function AppShell({ children }: { children: ReactNode }) {
   const isDirty = useInvestigatorStore((state) => state.isDirty);
@@ -26,25 +27,18 @@ export function AppShell({ children }: { children: ReactNode }) {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-[var(--color-weird-paper)] text-[var(--color-weird-black)] font-serif selection:bg-[var(--color-weird-red)] selection:text-[var(--color-weird-paper)]">
-      <div
-        className="fixed inset-0 pointer-events-none opacity-[0.08] mix-blend-multiply"
-        style={{
-          backgroundImage:
-            'url("https://www.transparenttextures.com/patterns/aged-paper.png")',
-        }}
-      ></div>
-
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col min-h-screen min-w-0">
         <div className="flex justify-end mb-2 print:hidden">
           <button
             onClick={toggleLanguage}
-            className="h-8 min-w-10 text-[11px] font-mono uppercase tracking-widest text-[var(--color-weird-black)] hover:text-[var(--color-weird-red)] transition-colors bg-[var(--color-weird-paper)] border border-[var(--color-weird-black-alpha-30)] px-2 rounded shadow-sm hover:shadow-md font-bold"
+            className="h-8 min-w-10 text-[11px] font-mono uppercase tracking-widest text-[var(--color-weird-black)] hover:text-[var(--color-weird-red)] transition-colors bg-[var(--color-weird-paper)] border-2 border-[var(--color-weird-black)] px-2 font-bold"
           >
             {i18n.language === "pt-BR" ? "EN" : "PT"}
           </button>
         </div>
         <main className="flex-1 min-w-0">{children}</main>
-        <footer className="mt-8 py-4 border-t-[2px] border-[var(--color-weird-red-alpha)] text-center text-[10px] text-[var(--color-weird-black-alpha-50)] font-serif italic print:hidden font-bold">
+        <footer className="mt-8 py-4 text-center text-[10px] text-[var(--color-weird-black-alpha-50)] font-serif italic print:hidden font-bold">
+          <TentacleDivider className="w-full h-5 text-[var(--color-weird-black)] opacity-15 mb-3" />
           <p>
             Call of Cthulhu is a Trademark of Chaosium Inc. and is used with
             their permission via the OGL.

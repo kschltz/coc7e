@@ -33,12 +33,12 @@ export function Step7Review() {
 
   return (
     <div className="space-y-8">
-      <h3 className="font-['IM_Fell_English'] text-3xl text-[var(--color-weird-red)] italic border-b-[3px] border-[var(--color-weird-black)] pb-2 font-bold">
+      <h3 className="font-serif text-3xl text-[var(--color-weird-paper)] italic border-b-[3px] border-[var(--color-weird-black)] pb-2 font-bold">
         {t("step_review")}
       </h3>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="space-y-4 bg-[var(--color-weird-paper)] p-6 border-[3px] border-[var(--color-weird-black)] shadow-[6px_6px_0px_var(--color-weird-black)]">
+        <div className="space-y-4 bg-[var(--color-weird-paper)] p-6 border-[3px] border-[var(--color-weird-black)]">
           <h4 className="font-serif uppercase tracking-wider text-[var(--color-weird-red)] text-xl font-bold border-b-2 border-[var(--color-weird-black)] pb-2">
             {t("biography")}
           </h4>
@@ -60,7 +60,7 @@ export function Step7Review() {
           </div>
         </div>
 
-        <div className="space-y-4 bg-[var(--color-weird-paper)] p-6 border-[3px] border-[var(--color-weird-black)] shadow-[6px_6px_0px_var(--color-weird-black)]">
+        <div className="space-y-4 bg-[var(--color-weird-paper)] p-6 border-[3px] border-[var(--color-weird-black)]">
           <h4 className="font-serif uppercase tracking-wider text-[var(--color-weird-red)] text-xl font-bold border-b-2 border-[var(--color-weird-black)] pb-2">
             {t("attributes")}
           </h4>
@@ -69,9 +69,9 @@ export function Step7Review() {
               (attr) => (
                 <div
                   key={attr}
-                  className="flex flex-col items-center bg-[var(--color-weird-paper)] p-2 border-2 border-[var(--color-weird-black)] shadow-[2px_2px_0px_var(--color-weird-black)]"
+                  className="flex flex-col items-center bg-[var(--color-weird-paper)] p-2 border-2 border-[var(--color-weird-black)]"
                 >
-                  <span className="font-serif font-bold text-[var(--color-weird-red)] text-xs">
+                  <span className="font-serif font-bold text-[var(--color-weird-yellow)] text-xs">
                     {t(attr.toLowerCase())}
                   </span>
                   <span className="text-xl font-bold text-[var(--color-weird-black)]">
@@ -80,8 +80,8 @@ export function Step7Review() {
                 </div>
               ),
             )}
-            <div className="flex flex-col items-center bg-[var(--color-weird-paper)] p-2 border-2 border-[var(--color-weird-black)] shadow-[2px_2px_0px_var(--color-weird-black)]">
-              <span className="font-serif font-bold text-[var(--color-weird-red)] text-xs">
+            <div className="flex flex-col items-center bg-[var(--color-weird-paper)] p-2 border-2 border-[var(--color-weird-black)]">
+              <span className="font-serif font-bold text-[var(--color-weird-yellow)] text-xs">
                 {t("luck")}
               </span>
               <span className="text-xl font-bold text-[var(--color-weird-black)]">{data.luck || 50}</span>
@@ -89,43 +89,43 @@ export function Step7Review() {
           </div>
         </div>
 
-        <div className="space-y-4 bg-[var(--color-weird-paper)] p-6 border-[3px] border-[var(--color-weird-black)] shadow-[6px_6px_0px_var(--color-weird-black)]">
+        <div className="space-y-4 bg-[var(--color-weird-paper)] p-6 border-[3px] border-[var(--color-weird-black)]">
           <h4 className="font-serif uppercase tracking-wider text-[var(--color-weird-red)] text-xl font-bold border-b-2 border-[var(--color-weird-black)] pb-2">
             {t("derived_stats")}
           </h4>
           <div className="grid grid-cols-3 gap-4 text-sm font-['Courier_Prime']">
             <div className="flex flex-col items-center">
-              <span className="font-serif font-bold text-[var(--color-weird-red)] text-xs">
+              <span className="font-serif font-bold text-[var(--color-weird-yellow)] text-xs">
                 {t("hp")}
               </span>
               <span className="text-2xl font-bold text-[var(--color-weird-black)]">{hpMax}</span>
             </div>
             <div className="flex flex-col items-center">
-              <span className="font-serif font-bold text-[var(--color-weird-red)] text-xs">
+              <span className="font-serif font-bold text-[var(--color-weird-yellow)] text-xs">
                 {t("mp")}
               </span>
               <span className="text-2xl font-bold text-[var(--color-weird-black)]">{mpMax}</span>
             </div>
             <div className="flex flex-col items-center">
-              <span className="font-serif font-bold text-[var(--color-weird-red)] text-xs">
+              <span className="font-serif font-bold text-[var(--color-weird-yellow)] text-xs">
                 {t("san")}
               </span>
               <span className="text-2xl font-bold text-[var(--color-weird-black)]">{sanStarting}</span>
             </div>
             <div className="flex flex-col items-center">
-              <span className="font-serif font-bold text-[var(--color-weird-red)] text-xs">
+              <span className="font-serif font-bold text-[var(--color-weird-yellow)] text-xs">
                 {t("mov")}
               </span>
               <span className="text-2xl font-bold text-[var(--color-weird-black)]">{mov}</span>
             </div>
             <div className="flex flex-col items-center">
-              <span className="font-serif font-bold text-[var(--color-weird-red)] text-xs">
+              <span className="font-serif font-bold text-[var(--color-weird-yellow)] text-xs">
                 {t("build")}
               </span>
               <span className="text-2xl font-bold text-[var(--color-weird-black)]">{build}</span>
             </div>
             <div className="flex flex-col items-center">
-              <span className="font-serif font-bold text-[var(--color-weird-red)] text-xs">
+              <span className="font-serif font-bold text-[var(--color-weird-yellow)] text-xs">
                 {t("damage_bonus")}
               </span>
               <span className="text-2xl font-bold text-[var(--color-weird-black)]">{damageBonus}</span>
@@ -133,7 +133,7 @@ export function Step7Review() {
           </div>
         </div>
 
-        <div className="space-y-4 bg-[var(--color-weird-paper)] p-6 border-[3px] border-[var(--color-weird-black)] shadow-[6px_6px_0px_var(--color-weird-black)]">
+        <div className="space-y-4 bg-[var(--color-weird-paper)] p-6 border-[3px] border-[var(--color-weird-black)]">
           <h4 className="font-serif uppercase tracking-wider text-[var(--color-weird-red)] text-xl font-bold border-b-2 border-[var(--color-weird-black)] pb-2">
             {t("top_skills")}
           </h4>

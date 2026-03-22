@@ -15,11 +15,11 @@ export function PulpBadge({
   return (
     <span
       className={cn(
-        "inline-flex items-center px-2 py-0.5 rounded text-xs font-medium uppercase tracking-wider",
+        "inline-flex items-center px-2 py-0.5 text-xs font-bold uppercase tracking-wider border-2 border-[var(--color-weird-black)]",
         variant === "default" &&
-          "bg-[var(--color-weird-darkred)] text-[var(--color-weird-paper)]",
+          "bg-[var(--color-weird-red)] text-[var(--color-weird-paper)]",
         variant === "muted" &&
-          "bg-[var(--color-weird-red-alpha)] text-[var(--color-weird-black)]",
+          "bg-[var(--color-weird-teal)] text-[var(--color-weird-paper)]",
         className,
       )}
     >

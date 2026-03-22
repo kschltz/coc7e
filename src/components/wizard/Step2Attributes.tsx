@@ -155,7 +155,7 @@ export function Step2Attributes() {
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center border-b-[3px] border-[var(--color-weird-black)] pb-2">
-        <h3 className="font-['IM_Fell_English'] text-3xl text-[var(--color-weird-red)] italic font-bold">
+        <h3 className="font-serif text-3xl text-[var(--color-weird-paper)] italic font-bold">
           {t("step_attributes")}
         </h3>
         <PulpButton
@@ -179,7 +179,7 @@ export function Step2Attributes() {
           return (
             <div
               key={attr}
-              className="space-y-2 bg-[var(--color-weird-paper)] p-4 border-2 border-[var(--color-weird-black)] shadow-[4px_4px_0px_var(--color-weird-black)]"
+              className="space-y-2 bg-[var(--color-weird-paper)] p-4 border-2 border-[var(--color-weird-black)]"
             >
               <label className="text-sm font-serif uppercase tracking-wider text-[var(--color-weird-black)] block text-center font-bold">
                 {t(attr.toLowerCase())}
@@ -216,7 +216,7 @@ export function Step2Attributes() {
           );
         })}
 
-        <div className="space-y-2 bg-[var(--color-weird-paper)] p-4 border-2 border-[var(--color-weird-black)] shadow-[4px_4px_0px_var(--color-weird-black)]">
+        <div className="space-y-2 bg-[var(--color-weird-paper)] p-4 border-2 border-[var(--color-weird-black)]">
           <label className="text-sm font-serif uppercase tracking-wider text-[var(--color-weird-black)] block text-center font-bold">
             {t("luck")}
           </label>

@@ -56,7 +56,7 @@ export function Step4Occupation() {
 
   return (
     <div className="space-y-6">
-      <h3 className="font-['IM_Fell_English'] text-3xl text-[var(--color-weird-red)] italic border-b-[3px] border-[var(--color-weird-black)] pb-2 font-bold">
+      <h3 className="font-serif text-3xl text-[var(--color-weird-paper)] italic border-b-[3px] border-[var(--color-weird-black)] pb-2 font-bold">
         {t("step_occupation")}
       </h3>
 
@@ -66,7 +66,7 @@ export function Step4Occupation() {
             {t(`occ_${occupation.key}`)}
           </h4>
 
-          <div className="bg-[var(--color-weird-paper)] p-6 border-[3px] border-[var(--color-weird-black)] shadow-[6px_6px_0px_var(--color-weird-black)] space-y-4">
+          <div className="bg-[var(--color-weird-paper)] p-6 border-[3px] border-[var(--color-weird-black)] space-y-4">
             <div>
               <span className="font-bold text-[var(--color-weird-black)] uppercase text-xs tracking-wider">
                 {t("point_formula")}:
@@ -113,7 +113,7 @@ export function Step4Occupation() {
               </span>
             </div>
 
-            <div className="bg-[var(--color-weird-red)] text-[var(--color-weird-paper)] p-6 border-[3px] border-[var(--color-weird-black)] shadow-[6px_6px_0px_var(--color-weird-black)] flex justify-between items-center">
+            <div className="bg-[var(--color-weird-red)] text-[var(--color-weird-paper)] p-6 border-[3px] border-[var(--color-weird-black)] flex justify-between items-center">
               <span className="font-serif uppercase tracking-wider text-sm font-bold">
                 {t("personal_interest_points")}
               </span>

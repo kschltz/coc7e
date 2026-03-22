@@ -220,12 +220,12 @@ export function Step5Skills() {
   return (
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b-[3px] border-[var(--color-weird-black)] pb-2 gap-2">
-        <h3 className="font-['IM_Fell_English'] text-3xl text-[var(--color-weird-red)] italic font-bold">
+        <h3 className="font-serif text-3xl text-[var(--color-weird-paper)] italic font-bold">
           {t("step_skills")}
         </h3>
         <div className="flex flex-wrap gap-2 text-sm font-serif uppercase tracking-wider text-[var(--color-weird-black)] font-bold">
           <div
-            className={`p-2 border-2 border-[var(--color-weird-black)] shadow-[2px_2px_0px_var(--color-weird-black)] ${occSpent > occPointsTotal ? "bg-red-200 text-red-900" : "bg-[var(--color-weird-paper)]"}`}
+            className={`p-2 border-2 border-[var(--color-weird-black)] ${occSpent > occPointsTotal ? "bg-red-200 text-red-900" : "bg-[var(--color-weird-paper)]"}`}
             title={
               occSpent > occPointsTotal
                 ? t("validation_occ_points_exceeded", {
@@ -238,7 +238,7 @@ export function Step5Skills() {
             {occPointsTotal}
           </div>
           <div
-            className={`p-2 border-2 border-[var(--color-weird-black)] shadow-[2px_2px_0px_var(--color-weird-black)] ${persSpent > persPointsTotal ? "bg-red-200 text-red-900" : "bg-[var(--color-weird-paper)]"}`}
+            className={`p-2 border-2 border-[var(--color-weird-black)] ${persSpent > persPointsTotal ? "bg-red-200 text-red-900" : "bg-[var(--color-weird-paper)]"}`}
             title={
               persSpent > persPointsTotal
                 ? t("validation_pers_points_exceeded", {
@@ -254,7 +254,7 @@ export function Step5Skills() {
             <button
               onClick={handleAutoDistribute}
               disabled={occSpent >= occPointsTotal}
-              className="px-2 py-2 border-2 border-[var(--color-weird-black)] shadow-[2px_2px_0px_var(--color-weird-black)] bg-[var(--color-weird-paper)] hover:bg-[var(--color-weird-black-alpha-10)] disabled:opacity-50 disabled:cursor-not-allowed text-xs uppercase whitespace-nowrap"
+              className="px-2 py-2 border-2 border-[var(--color-weird-black)] bg-[var(--color-weird-paper)] hover:bg-[var(--color-weird-black-alpha-10)] disabled:opacity-50 disabled:cursor-not-allowed text-xs uppercase whitespace-nowrap"
               title={t("suggest_allocation_title")}
             >
               {t("suggest_allocation")}
@@ -284,7 +284,7 @@ export function Step5Skills() {
           return (
             <div
               key={skill.key}
-              className={`flex items-center justify-between p-2 border-b-2 border-[var(--color-weird-black-alpha-20)] hover:bg-[var(--color-weird-black-alpha-10)] transition-colors ${isOcc ? "bg-[var(--color-weird-paper)] border-[var(--color-weird-black)] shadow-[2px_2px_0px_var(--color-weird-black)]" : ""}`}
+              className={`flex items-center justify-between p-2 border-b-2 border-[var(--color-weird-black-alpha-20)] hover:bg-[var(--color-weird-black-alpha-10)] transition-colors ${isOcc ? "bg-[var(--color-weird-paper)] border-[var(--color-weird-black)]" : ""}`}
             >
               <div className="flex items-center gap-1 sm:gap-2 flex-1 min-w-0">
                 <input

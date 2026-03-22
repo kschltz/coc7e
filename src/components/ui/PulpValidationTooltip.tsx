@@ -24,7 +24,7 @@ export function PulpValidationTooltip({
       role="alert"
       aria-live="polite"
     >
-      <div className="relative border-2 border-[var(--color-weird-black)] bg-[var(--color-weird-paper)] px-2 py-1 text-[10px] leading-tight font-serif text-[var(--color-weird-red)] font-bold shadow-[2px_2px_0px_var(--color-weird-black)]">
+      <div className="relative border-2 border-[var(--color-weird-black)] bg-[var(--color-weird-paper)] px-2 py-1 text-[10px] leading-tight font-serif text-[var(--color-weird-red)] font-bold">
         <div className="absolute -top-1 right-3 h-2 w-2 rotate-45 border-l-2 border-t-2 border-[var(--color-weird-black)] bg-[var(--color-weird-paper)]" />
         {message}
       </div>

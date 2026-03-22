@@ -19,7 +19,7 @@ export function Step6Backstory() {
 
   return (
     <div className="space-y-6">
-      <h3 className="font-['IM_Fell_English'] text-3xl text-[var(--color-weird-red)] italic border-b-[3px] border-[var(--color-weird-black)] pb-2 font-bold">
+      <h3 className="font-serif text-3xl text-[var(--color-weird-paper)] italic border-b-[3px] border-[var(--color-weird-black)] pb-2 font-bold">
         {t("step_backstory")}
       </h3>
 
@@ -32,7 +32,7 @@ export function Step6Backstory() {
             name="personalDescription"
             value={data.personalDescription || ""}
             onChange={handleChange}
-            className="w-full h-24 bg-[var(--color-weird-paper)] border-2 border-[var(--color-weird-black)] shadow-[4px_4px_0px_var(--color-weird-black)] p-2 text-sm font-serif text-[var(--color-weird-black)] focus-visible:outline-none focus-visible:border-[var(--color-weird-red)] resize-none font-bold"
+            className="w-full h-24 bg-[var(--color-weird-paper)] border-2 border-[var(--color-weird-black)] p-2 text-sm font-serif text-[var(--color-weird-black)] focus-visible:outline-none focus-visible:border-[var(--color-weird-red)] resize-none font-bold"
           />
         </div>
 
@@ -44,7 +44,7 @@ export function Step6Backstory() {
             name="ideology"
             value={data.ideology || ""}
             onChange={handleChange}
-            className="w-full h-24 bg-[var(--color-weird-paper)] border-2 border-[var(--color-weird-black)] shadow-[4px_4px_0px_var(--color-weird-black)] p-2 text-sm font-serif text-[var(--color-weird-black)] focus-visible:outline-none focus-visible:border-[var(--color-weird-red)] resize-none font-bold"
+            className="w-full h-24 bg-[var(--color-weird-paper)] border-2 border-[var(--color-weird-black)] p-2 text-sm font-serif text-[var(--color-weird-black)] focus-visible:outline-none focus-visible:border-[var(--color-weird-red)] resize-none font-bold"
           />
         </div>
 
@@ -56,7 +56,7 @@ export function Step6Backstory() {
             name="significantPeople"
             value={data.significantPeople || ""}
             onChange={handleChange}
-            className="w-full h-24 bg-[var(--color-weird-paper)] border-2 border-[var(--color-weird-black)] shadow-[4px_4px_0px_var(--color-weird-black)] p-2 text-sm font-serif text-[var(--color-weird-black)] focus-visible:outline-none focus-visible:border-[var(--color-weird-red)] resize-none font-bold"
+            className="w-full h-24 bg-[var(--color-weird-paper)] border-2 border-[var(--color-weird-black)] p-2 text-sm font-serif text-[var(--color-weird-black)] focus-visible:outline-none focus-visible:border-[var(--color-weird-red)] resize-none font-bold"
           />
         </div>
 
@@ -68,7 +68,7 @@ export function Step6Backstory() {
             name="meaningfulLocations"
             value={data.meaningfulLocations || ""}
             onChange={handleChange}
-            className="w-full h-24 bg-[var(--color-weird-paper)] border-2 border-[var(--color-weird-black)] shadow-[4px_4px_0px_var(--color-weird-black)] p-2 text-sm font-serif text-[var(--color-weird-black)] focus-visible:outline-none focus-visible:border-[var(--color-weird-red)] resize-none font-bold"
+            className="w-full h-24 bg-[var(--color-weird-paper)] border-2 border-[var(--color-weird-black)] p-2 text-sm font-serif text-[var(--color-weird-black)] focus-visible:outline-none focus-visible:border-[var(--color-weird-red)] resize-none font-bold"
           />
         </div>
 
@@ -80,7 +80,7 @@ export function Step6Backstory() {
             name="treasuredPossessions"
             value={data.treasuredPossessions || ""}
             onChange={handleChange}
-            className="w-full h-24 bg-[var(--color-weird-paper)] border-2 border-[var(--color-weird-black)] shadow-[4px_4px_0px_var(--color-weird-black)] p-2 text-sm font-serif text-[var(--color-weird-black)] focus-visible:outline-none focus-visible:border-[var(--color-weird-red)] resize-none font-bold"
+            className="w-full h-24 bg-[var(--color-weird-paper)] border-2 border-[var(--color-weird-black)] p-2 text-sm font-serif text-[var(--color-weird-black)] focus-visible:outline-none focus-visible:border-[var(--color-weird-red)] resize-none font-bold"
           />
         </div>
 
@@ -92,7 +92,7 @@ export function Step6Backstory() {
             name="traits"
             value={data.traits || ""}
             onChange={handleChange}
-            className="w-full h-24 bg-[var(--color-weird-paper)] border-2 border-[var(--color-weird-black)] shadow-[4px_4px_0px_var(--color-weird-black)] p-2 text-sm font-serif text-[var(--color-weird-black)] focus-visible:outline-none focus-visible:border-[var(--color-weird-red)] resize-none font-bold"
+            className="w-full h-24 bg-[var(--color-weird-paper)] border-2 border-[var(--color-weird-black)] p-2 text-sm font-serif text-[var(--color-weird-black)] focus-visible:outline-none focus-visible:border-[var(--color-weird-red)] resize-none font-bold"
           />
         </div>
       </div>

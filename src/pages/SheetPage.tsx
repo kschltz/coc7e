@@ -8,6 +8,7 @@ import { PulpCheckbox } from "../components/ui/PulpCheckbox";
 import { saveSheet } from "../adapters/fileAdapter";
 import { Printer, Save, Edit, Play, ArrowLeft, Dices } from "lucide-react";
 import { SKILL_CATALOGUE } from "../domain/skills";
+import { ElderSign, TentacleDivider } from "../components/illustrations";
 import { jsPDF } from "jspdf";
 import autoTable from "jspdf-autotable";
 
@@ -353,7 +354,7 @@ export function SheetPage() {
 
   return (
     <div className="max-w-7xl mx-auto py-2 min-w-0">
-      <div className="flex flex-wrap items-center gap-3 mb-4 print:hidden border-b-2 border-[var(--color-weird-black-alpha-20)] pb-2 min-w-0">
+      <div className="flex flex-wrap items-center gap-3 mb-4 print:hidden border-b-2 border-[var(--color-weird-black)] pb-2 min-w-0">
         <div className="flex items-center gap-4 min-w-0">
           <button
             onClick={handleHomeClick}
@@ -410,17 +411,18 @@ export function SheetPage() {
         </div>
       </div>
 
+      <TentacleDivider className="w-full h-6 text-[var(--color-weird-black)] opacity-15 mb-2 print:hidden" />
+
       <div id="sheet-content" className="grid grid-cols-1 lg:grid-cols-12 print:grid-cols-12 gap-4 print:gap-2 print:p-0">
         {/* Left Column */}
         <div className="lg:col-span-3 print:col-span-3 space-y-4 print:space-y-2">
-          <div className="border-[3px] border-[var(--color-weird-black)] p-4 print:p-2 bg-[var(--color-weird-paper)] shadow-[6px_6px_0px_var(--color-weird-black)] relative">
-            <div className="absolute top-0 left-0 w-full h-2 bg-[var(--color-weird-red)] border-b-[3px] border-[var(--color-weird-black)]"></div>
-            <h2 className="font-['IM_Fell_English'] text-2xl print:text-xl text-[var(--color-weird-red)] italic mb-4 border-b-[3px] border-[var(--color-weird-black)] pb-1 font-bold mt-1">
+          <div className="border-[3px] border-[var(--color-weird-paper)] p-4 print:p-2 bg-[var(--color-weird-teal)] relative">
+            <h2 className="font-serif text-2xl print:text-xl text-[var(--color-weird-paper)] italic mb-4 pb-1 font-extrabold uppercase bg-[var(--color-weird-red)] px-3 py-1 border-2 border-[var(--color-weird-black)] -mx-1">
               {t("investigator")}
             </h2>
             <div className="space-y-2">
               <div>
-                <label className="text-[10px] font-serif uppercase tracking-wider text-[var(--color-weird-black)] block font-bold">
+                <label className="text-[10px] font-sans uppercase tracking-wider text-[var(--color-weird-paper)] block font-bold">
                   {t("name")}
                 </label>
                 {editMode ? (
@@ -429,30 +431,30 @@ export function SheetPage() {
                     onChange={(e) => updateField("name", e.target.value)}
                   />
                 ) : (
-                  <div className="font-serif text-base border-b border-[var(--color-weird-black-alpha-30)] pb-0.5 font-bold text-[var(--color-weird-black)]">
+                  <div className="font-serif text-base border-b border-[var(--color-weird-paper)]/30 pb-0.5 font-bold text-[var(--color-weird-paper)]">
                     {sheet.name}
                   </div>
                 )}
               </div>
               <div>
-                <label className="text-[10px] font-serif uppercase tracking-wider text-[var(--color-weird-black)] block font-bold">
+                <label className="text-[10px] font-sans uppercase tracking-wider text-[var(--color-weird-paper)] block font-bold">
                   {t("occupation")}
                 </label>
-                <div className="font-serif text-base border-b border-[var(--color-weird-black-alpha-30)] pb-0.5 font-bold text-[var(--color-weird-black)]">
+                <div className="font-serif text-base border-b border-[var(--color-weird-paper)]/30 pb-0.5 font-bold text-[var(--color-weird-paper)]">
                   {t(`occ_${sheet.occupation}`)}
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-2">
                 <div>
-                  <label className="text-[10px] font-serif uppercase tracking-wider text-[var(--color-weird-black)] block font-bold">
+                  <label className="text-[10px] font-sans uppercase tracking-wider text-[var(--color-weird-paper)] block font-bold">
                     {t("age")}
                   </label>
-                  <div className="font-serif text-base border-b border-[var(--color-weird-black-alpha-30)] pb-0.5 font-bold text-[var(--color-weird-black)]">
+                  <div className="font-serif text-base border-b border-[var(--color-weird-paper)]/30 pb-0.5 font-bold text-[var(--color-weird-paper)]">
                     {sheet.age}
                   </div>
                 </div>
                 <div>
-                  <label className="text-[10px] font-serif uppercase tracking-wider text-[var(--color-weird-black)] block font-bold">
+                  <label className="text-[10px] font-sans uppercase tracking-wider text-[var(--color-weird-paper)] block font-bold">
                     {t("sex")}
                   </label>
                   {editMode ? (
@@ -461,7 +463,7 @@ export function SheetPage() {
                       onChange={(e) => updateField("sex", e.target.value)}
                     />
                   ) : (
-                    <div className="font-serif text-base border-b border-[var(--color-weird-black-alpha-30)] pb-0.5 font-bold text-[var(--color-weird-black)]">
+                    <div className="font-serif text-base border-b border-[var(--color-weird-paper)]/30 pb-0.5 font-bold text-[var(--color-weird-paper)]">
                       {sheet.sex || "-"}
                     </div>
                   )}
@@ -470,9 +472,8 @@ export function SheetPage() {
             </div>
           </div>
 
-          <div className="border-[3px] border-[var(--color-weird-black)] p-4 print:p-2 bg-[var(--color-weird-paper)] shadow-[6px_6px_0px_var(--color-weird-black)] relative">
-            <div className="absolute top-0 left-0 w-full h-2 bg-[var(--color-weird-red)] border-b-[3px] border-[var(--color-weird-black)]"></div>
-            <h2 className="font-['IM_Fell_English'] text-2xl print:text-xl text-[var(--color-weird-red)] italic mb-4 border-b-[3px] border-[var(--color-weird-black)] pb-1 font-bold mt-1">
+          <div className="border-[3px] border-[var(--color-weird-paper)] p-4 print:p-2 bg-[var(--color-weird-teal)] relative">
+            <h2 className="font-serif text-2xl print:text-xl text-[var(--color-weird-paper)] italic mb-4 pb-1 font-extrabold uppercase bg-[var(--color-weird-red)] px-3 py-1 border-2 border-[var(--color-weird-black)] -mx-1">
               {t("attributes")}
             </h2>
             <div className="grid grid-cols-2 gap-2">
@@ -480,7 +481,7 @@ export function SheetPage() {
                 (attr) => (
                   <div
                     key={attr}
-                    className="flex flex-col items-center border-2 border-[var(--color-weird-black)] p-1 bg-[var(--color-weird-paper)] shadow-[2px_2px_0px_var(--color-weird-black)]"
+                    className="flex flex-col items-center border-2 border-[var(--color-weird-black)] p-1 bg-[var(--color-weird-paper)]"
                   >
                     <span className="font-serif font-bold text-[var(--color-weird-red)] text-[10px] mb-0.5">
                       {t(attr.toLowerCase())}
@@ -512,15 +513,14 @@ export function SheetPage() {
             </div>
           </div>
 
-          <div className="border-[3px] border-[var(--color-weird-black)] p-4 print:p-2 bg-[var(--color-weird-paper)] shadow-[6px_6px_0px_var(--color-weird-black)] relative">
-            <div className="absolute top-0 left-0 w-full h-2 bg-[var(--color-weird-red)] border-b-[3px] border-[var(--color-weird-black)]"></div>
-            <h2 className="font-['IM_Fell_English'] text-2xl print:text-xl text-[var(--color-weird-red)] italic mb-4 border-b-[3px] border-[var(--color-weird-black)] pb-1 font-bold mt-1">
+          <div className="border-[3px] border-[var(--color-weird-paper)] p-4 print:p-2 bg-[var(--color-weird-teal)] relative">
+            <h2 className="font-serif text-2xl print:text-xl text-[var(--color-weird-paper)] italic mb-4 pb-1 font-extrabold uppercase bg-[var(--color-weird-red)] px-3 py-1 border-2 border-[var(--color-weird-black)] -mx-1">
               {t("derived_stats")}
             </h2>
 
             <div className="space-y-2">
-              <div className="flex items-center justify-between border-b border-[var(--color-weird-black-alpha-20)] pb-1">
-                <span className="font-serif font-bold text-[var(--color-weird-red)] text-xs">
+              <div className="flex items-center justify-between border-b border-[var(--color-weird-paper)]/20 pb-1">
+                <span className="font-sans font-bold text-[var(--color-weird-paper)] text-xs uppercase">
                   {t("hp")}
                 </span>
                 <div className="flex items-center gap-2">
@@ -528,16 +528,16 @@ export function SheetPage() {
                     type="number"
                     value={sheet.hp?.current || 0}
                     onChange={(e) => updateHP(parseInt(e.target.value) || 0)}
-                    className="w-10 text-center text-lg font-['Courier_Prime'] font-bold border-b-2 border-[var(--color-weird-red)] text-[var(--color-weird-black)] h-7"
+                    className="w-14 text-center text-lg font-['Courier_Prime'] font-bold border-b-2 border-[var(--color-weird-red)] text-[var(--color-weird-black)] h-7"
                   />
-                  <span className="text-[var(--color-weird-black-alpha-50)] font-['Courier_Prime'] font-bold text-sm">
+                  <span className="text-[var(--color-weird-paper)]/50 font-['Courier_Prime'] font-bold text-sm">
                     / {sheet.hp.max}
                   </span>
                 </div>
               </div>
 
-              <div className="flex items-center justify-between border-b border-[var(--color-weird-black-alpha-20)] pb-1">
-                <span className="font-serif font-bold text-[var(--color-weird-red)] text-xs">
+              <div className="flex items-center justify-between border-b border-[var(--color-weird-paper)]/20 pb-1">
+                <span className="font-sans font-bold text-[var(--color-weird-paper)] text-xs uppercase">
                   {t("mp")}
                 </span>
                 <div className="flex items-center gap-2">
@@ -545,16 +545,16 @@ export function SheetPage() {
                     type="number"
                     value={sheet.mp?.current || 0}
                     onChange={(e) => updateMP(parseInt(e.target.value) || 0)}
-                    className="w-10 text-center text-lg font-['Courier_Prime'] font-bold border-b-2 border-[var(--color-weird-red)] text-[var(--color-weird-black)] h-7"
+                    className="w-14 text-center text-lg font-['Courier_Prime'] font-bold border-b-2 border-[var(--color-weird-red)] text-[var(--color-weird-black)] h-7"
                   />
-                  <span className="text-[var(--color-weird-black-alpha-50)] font-['Courier_Prime'] font-bold text-sm">
+                  <span className="text-[var(--color-weird-paper)]/50 font-['Courier_Prime'] font-bold text-sm">
                     / {sheet.mp.max}
                   </span>
                 </div>
               </div>
 
-              <div className="flex items-center justify-between border-b border-[var(--color-weird-black-alpha-20)] pb-1">
-                <span className="font-serif font-bold text-[var(--color-weird-red)] text-xs">
+              <div className="flex items-center justify-between border-b border-[var(--color-weird-paper)]/20 pb-1">
+                <span className="font-sans font-bold text-[var(--color-weird-paper)] text-xs uppercase">
                   {t("san")}
                 </span>
                 <div className="flex items-center gap-2">
@@ -562,16 +562,16 @@ export function SheetPage() {
                     type="number"
                     value={sheet.san?.current || 0}
                     onChange={(e) => updateSAN(parseInt(e.target.value) || 0)}
-                    className="w-10 text-center text-lg font-['Courier_Prime'] font-bold border-b-2 border-[var(--color-weird-red)] text-[var(--color-weird-black)] h-7"
+                    className="w-14 text-center text-lg font-['Courier_Prime'] font-bold border-b-2 border-[var(--color-weird-red)] text-[var(--color-weird-black)] h-7"
                   />
-                  <span className="text-[var(--color-weird-black-alpha-50)] font-['Courier_Prime'] font-bold text-sm">
+                  <span className="text-[var(--color-weird-paper)]/50 font-['Courier_Prime'] font-bold text-sm">
                     / {sheet.san.max}
                   </span>
                 </div>
               </div>
 
-              <div className="flex items-center justify-between border-b border-[var(--color-weird-black-alpha-20)] pb-1">
-                <span className="font-serif font-bold text-[var(--color-weird-red)] text-xs">
+              <div className="flex items-center justify-between border-b border-[var(--color-weird-paper)]/20 pb-1">
+                <span className="font-sans font-bold text-[var(--color-weird-paper)] text-xs uppercase">
                   {t("luck")}
                 </span>
                 <div className="flex items-center gap-2">
@@ -579,9 +579,9 @@ export function SheetPage() {
                     type="number"
                     value={sheet.luck || 0}
                     onChange={(e) => updateLuck(parseInt(e.target.value) || 0)}
-                    className="w-10 text-center text-lg font-['Courier_Prime'] font-bold border-b-2 border-[var(--color-weird-red)] text-[var(--color-weird-black)] h-7"
+                    className="w-14 text-center text-lg font-['Courier_Prime'] font-bold border-b-2 border-[var(--color-weird-red)] text-[var(--color-weird-black)] h-7"
                   />
-                  <span className="text-[var(--color-weird-black-alpha-50)] font-['Courier_Prime'] font-bold text-sm">
+                  <span className="text-[var(--color-weird-paper)]/50 font-['Courier_Prime'] font-bold text-sm">
                     / 99
                   </span>
                 </div>
@@ -589,26 +589,26 @@ export function SheetPage() {
 
               <div className="grid grid-cols-3 gap-1 pt-1 text-center">
                 <div>
-                  <span className="block font-serif font-bold text-[var(--color-weird-red)] text-[9px] uppercase">
+                  <span className="block font-sans font-bold text-[var(--color-weird-paper)] text-[9px] uppercase">
                     {t("mov")}
                   </span>
-                  <span className="font-['Courier_Prime'] text-xl font-bold text-[var(--color-weird-black)]">
+                  <span className="font-['Courier_Prime'] text-xl font-bold text-[var(--color-weird-paper)]">
                     {sheet.mov}
                   </span>
                 </div>
                 <div>
-                  <span className="block font-serif font-bold text-[var(--color-weird-red)] text-[9px] uppercase">
+                  <span className="block font-sans font-bold text-[var(--color-weird-paper)] text-[9px] uppercase">
                     {t("build")}
                   </span>
-                  <span className="font-['Courier_Prime'] text-xl font-bold text-[var(--color-weird-black)]">
+                  <span className="font-['Courier_Prime'] text-xl font-bold text-[var(--color-weird-paper)]">
                     {sheet.build > 0 ? `+${sheet.build}` : sheet.build}
                   </span>
                 </div>
                 <div>
-                  <span className="block font-serif font-bold text-[var(--color-weird-red)] text-[9px] uppercase">
+                  <span className="block font-sans font-bold text-[var(--color-weird-paper)] text-[9px] uppercase">
                     {t("damage_bonus")}
                   </span>
-                  <span className="font-['Courier_Prime'] text-xl font-bold text-[var(--color-weird-black)]">
+                  <span className="font-['Courier_Prime'] text-xl font-bold text-[var(--color-weird-paper)]">
                     {sheet.damageBonus}
                   </span>
                 </div>
@@ -619,9 +619,8 @@ export function SheetPage() {
 
         {/* Centre Column */}
         <div className="lg:col-span-5 print:col-span-5 space-y-4 print:space-y-2">
-          <div className="border-[3px] border-[var(--color-weird-black)] p-4 print:p-2 bg-[var(--color-weird-paper)] shadow-[6px_6px_0px_var(--color-weird-black)] relative">
-            <div className="absolute top-0 left-0 w-full h-2 bg-[var(--color-weird-red)] border-b-[3px] border-[var(--color-weird-black)]"></div>
-            <h2 className="font-['IM_Fell_English'] text-2xl print:text-xl text-[var(--color-weird-red)] italic mb-4 border-b-[3px] border-[var(--color-weird-black)] pb-1 font-bold mt-1">
+          <div className="border-[3px] border-[var(--color-weird-paper)] p-4 print:p-2 bg-[var(--color-weird-teal)] relative">
+            <h2 className="font-serif text-2xl print:text-xl text-[var(--color-weird-paper)] italic mb-4 pb-1 font-extrabold uppercase bg-[var(--color-weird-red)] px-3 py-1 border-2 border-[var(--color-weird-black)] -mx-1">
               {t("skills")}
             </h2>
 
@@ -634,7 +633,7 @@ export function SheetPage() {
                 return (
                   <div
                     key={skill.key}
-                    className="flex items-center justify-between border-b-2 border-[var(--color-weird-black-alpha-20)] py-1 hover:bg-[var(--color-weird-black-alpha-10)] transition-colors"
+                    className="flex items-center justify-between border-b-2 border-[var(--color-weird-paper)]/20 py-1 hover:bg-[var(--color-weird-paper)]/10 transition-colors"
                   >
                     <div className="flex items-center gap-2 flex-1 min-w-0">
                       <PulpCheckbox
@@ -643,7 +642,7 @@ export function SheetPage() {
                         className="w-4 h-4 flex-shrink-0"
                       />
                       <span
-                        className={`text-sm font-serif truncate font-bold ${isSpecialist ? "text-[var(--color-weird-red)]" : "text-[var(--color-weird-black)]"}`}
+                        className={`text-sm font-serif truncate font-bold ${isSpecialist ? "text-[var(--color-weird-yellow)]" : "text-[var(--color-weird-paper)]"}`}
                         title={t(`skills_${skill.key}`)}
                       >
                         {t(`skills_${skill.key}`)}
@@ -663,11 +662,11 @@ export function SheetPage() {
                           className="w-10 text-center text-sm font-['Courier_Prime'] font-bold border-b-2 border-[var(--color-weird-red)] bg-transparent p-0 h-6"
                         />
                       ) : (
-                        <span className="w-8 text-right font-['Courier_Prime'] font-bold text-base print:text-sm text-[var(--color-weird-black)]">
+                        <span className="w-8 text-right font-['Courier_Prime'] font-bold text-base print:text-sm text-[var(--color-weird-paper)]">
                           {s.value}
                         </span>
                       )}
-                      <div className="flex flex-col text-[8px] font-['Courier_Prime'] text-[var(--color-weird-black-alpha-70)] leading-none w-4 text-right font-bold">
+                      <div className="flex flex-col text-[8px] font-['Courier_Prime'] text-[var(--color-weird-paper)]/70 leading-none w-4 text-right font-bold">
                         <span>{Math.floor(s.value / 2)}</span>
                         <span>{Math.floor(s.value / 5)}</span>
                       </div>
@@ -681,13 +680,15 @@ export function SheetPage() {
 
         {/* Right Column */}
         <div className="lg:col-span-4 print:col-span-4 space-y-4 print:space-y-2">
-          <div className="border-[3px] border-[var(--color-weird-black)] p-4 print:p-2 bg-[var(--color-weird-paper)] shadow-[6px_6px_0px_var(--color-weird-black)] relative">
-            <div className="absolute top-0 left-0 w-full h-2 bg-[var(--color-weird-red)] border-b-[3px] border-[var(--color-weird-black)]"></div>
-            <h2 className="font-['IM_Fell_English'] text-2xl print:text-xl text-[var(--color-weird-red)] italic mb-4 border-b-[3px] border-[var(--color-weird-black)] pb-1 font-bold mt-1">
+          <div className="border-[3px] border-[var(--color-weird-paper)] p-4 print:p-2 bg-[var(--color-weird-teal)] relative overflow-hidden">
+            {/* Watermark */}
+            <ElderSign className="absolute bottom-4 right-4 w-24 h-24 text-[var(--color-weird-black)] opacity-[0.06] pointer-events-none print:hidden" />
+
+            <h2 className="font-serif text-2xl print:text-xl text-[var(--color-weird-paper)] italic mb-4 pb-1 font-extrabold uppercase bg-[var(--color-weird-red)] px-3 py-1 border-2 border-[var(--color-weird-black)] -mx-1">
               {t("backstory")}
             </h2>
 
-            <div className="space-y-2">
+            <div className="relative z-10 space-y-2">
               {[
                 { key: "personalDescription", label: t("personal_description") },
                 { key: "ideology", label: t("ideology_beliefs") },
@@ -706,10 +707,10 @@ export function SheetPage() {
                       onChange={(e) =>
                         updateField(item.key as any, e.target.value)
                       }
-                      className="w-full h-16 bg-[var(--color-weird-paper)] border-2 border-[var(--color-weird-black)] shadow-[4px_4px_0px_var(--color-weird-black)] p-2 text-sm font-serif text-[var(--color-weird-black)] focus-visible:outline-none focus-visible:border-[var(--color-weird-red)] resize-y font-bold"
+                      className="w-full h-16 bg-[var(--color-weird-paper)] border-2 border-[var(--color-weird-black)] p-2 text-sm font-serif text-[var(--color-weird-black)] focus-visible:outline-none focus-visible:border-[var(--color-weird-red)] resize-y font-bold"
                     />
                   ) : (
-                    <div className="font-serif text-xs border-b border-[var(--color-weird-black-alpha-20)] pb-1 min-h-[1.5rem] whitespace-pre-wrap italic text-[var(--color-weird-black)] font-bold">
+                    <div className="font-serif text-xs border-b border-[var(--color-weird-paper)]/20 pb-1 min-h-[1.5rem] whitespace-pre-wrap italic text-[var(--color-weird-paper)] font-bold">
                       {(sheet as any)[item.key] || "-"}
                     </div>
                   )}
@@ -718,19 +719,18 @@ export function SheetPage() {
             </div>
           </div>
 
-          <div className="border-[3px] border-[var(--color-weird-black)] p-4 print:p-2 bg-[var(--color-weird-paper)] shadow-[6px_6px_0px_var(--color-weird-black)] relative">
-            <div className="absolute top-0 left-0 w-full h-2 bg-[var(--color-weird-red)] border-b-[3px] border-[var(--color-weird-black)]"></div>
-            <h2 className="font-['IM_Fell_English'] text-2xl print:text-xl text-[var(--color-weird-red)] italic mb-4 border-b-[3px] border-[var(--color-weird-black)] pb-1 font-bold mt-1">
+          <div className="border-[3px] border-[var(--color-weird-paper)] p-4 print:p-2 bg-[var(--color-weird-teal)] relative">
+            <h2 className="font-serif text-2xl print:text-xl text-[var(--color-weird-paper)] italic mb-4 pb-1 font-extrabold uppercase bg-[var(--color-weird-red)] px-3 py-1 border-2 border-[var(--color-weird-black)] -mx-1">
               {t("notes")}
             </h2>
             {editMode ? (
               <textarea
                 value={sheet.notes || ""}
                 onChange={(e) => updateField("notes", e.target.value)}
-                className="w-full h-32 bg-[var(--color-weird-paper)] border-2 border-[var(--color-weird-black)] shadow-[4px_4px_0px_var(--color-weird-black)] p-2 text-sm font-serif text-[var(--color-weird-black)] focus-visible:outline-none focus-visible:border-[var(--color-weird-red)] resize-y font-bold"
+                className="w-full h-32 bg-[var(--color-weird-paper)] border-2 border-[var(--color-weird-black)] p-2 text-sm font-serif text-[var(--color-weird-black)] focus-visible:outline-none focus-visible:border-[var(--color-weird-red)] resize-y font-bold"
               />
             ) : (
-              <div className="font-serif text-xs min-h-[8rem] whitespace-pre-wrap italic text-[var(--color-weird-black)] font-bold">
+              <div className="font-serif text-xs min-h-[8rem] whitespace-pre-wrap italic text-[var(--color-weird-paper)] font-bold">
                 {sheet.notes || "-"}
               </div>
             )}

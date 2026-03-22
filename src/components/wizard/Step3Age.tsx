@@ -22,7 +22,7 @@ export function Step3Age() {
 
   return (
     <div className="space-y-6">
-      <h3 className="font-['IM_Fell_English'] text-3xl text-[var(--color-weird-red)] italic border-b-[3px] border-[var(--color-weird-black)] pb-2 font-bold">
+      <h3 className="font-serif text-3xl text-[var(--color-weird-paper)] italic border-b-[3px] border-[var(--color-weird-black)] pb-2 font-bold">
         {t("step_age")}
       </h3>
 
@@ -41,7 +41,7 @@ export function Step3Age() {
           />
         </div>
 
-        <div className="bg-[var(--color-weird-paper)] p-6 border-[3px] border-[var(--color-weird-black)] shadow-[6px_6px_0px_var(--color-weird-black)]">
+        <div className="bg-[var(--color-weird-paper)] p-6 border-[3px] border-[var(--color-weird-black)]">
           <h4 className="font-serif uppercase tracking-wider text-[var(--color-weird-red)] text-lg font-bold mb-4 border-b-2 border-[var(--color-weird-black)] pb-2">
             {t("age_modifiers")}
           </h4>
